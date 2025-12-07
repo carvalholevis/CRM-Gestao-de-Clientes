@@ -1,106 +1,106 @@
-# CRM - Gestão de Clientes | CA Design de Interiores 🛋️ PT-PT
+# 🏠 CRM - Gestão de Clientes (Design de Interiores)
 
-Este repositório documenta o **Sistema de Gestão de Clientes (CRM)** desenvolvido como **Projeto de Extensão Universitária**. O software foi criado sob medida para atender uma demanda real de organização e produtividade de uma empresa de Design de Interiores sediada em Portugal.
+Este repositório contém o código-fonte de um sistema de CRM (Customer Relationship Management) desenvolvido como **Projeto de Extensão** para o curso de Engenharia de Software da **Descomplica Faculdade Digital**.
 
----
+## 📖 Sobre o Projeto
 
-## 🏢 Contexto do Cliente e Justificativa
+O objetivo deste projeto foi desenvolver uma solução tecnológica real para otimizar os processos de gestão de uma **empresa de Design de Interiores**. O sistema visa centralizar o cadastro de clientes, gerenciar atendimentos e facilitar a organização de dados para projetos de decoração e reforma.
 
-Este projeto não é apenas um exercício acadêmico, mas uma solução prática desenvolvida para um cliente real.
+O projeto foi concebido para resolver dores reais de organização e relacionamento com o cliente no nicho de interiores, oferecendo uma interface amigável e funcional.
 
-* **Cliente:** CA Design de Interiores.
-* **Localização:** Portugal.
-* **Propósito:** O projeto foi solicitado pelo proprietário da empresa para resolver problemas de organização de dados, substituindo anotações manuais por um sistema digital centralizado.
+## 🛠 Tecnologias Utilizadas
 
-### ⚠️ Nota sobre Identificação Jurídica (CNPJ)
-Como a empresa beneficiária está localizada e opera em **Portugal**, ela **não possui CNPJ** (Cadastro Nacional da Pessoa Jurídica), que é um registro exclusivo para empresas brasileiras. A empresa opera sob as normas e registros fiscais portugueses. Portanto, para fins de relatório de extensão, considera-se este um projeto internacional de suporte a uma microempresa ativa.
-
----
-
-## 📋 Sobre o Projeto
-
-O objetivo principal foi criar uma ferramenta acessível e segura para que o escritório possa cadastrar, consultar e gerenciar o histórico de seus clientes.
-
-**Problema Solucionado:**
-Antes do sistema, os dados dos clientes estavam dispersos, dificultando o acesso rápido a contatos e endereços para visitas técnicas.
-
-**Solução Entregue:**
-Um sistema web intuitivo onde é possível registrar novos clientes, editar informações desatualizadas e manter uma base de dados unificada, facilitando o dia a dia operacional do designer.
+* **Linguagem:** Python 3
+* **Framework Web:** Django
+* **Frontend:** HTML5, CSS3, Bootstrap 5
+* **Bibliotecas Auxiliares:**
+    * `django-crispy-forms` (Estilização de formulários)
+    * `crispy-bootstrap5` (Integração do Crispy com Bootstrap 5)
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🚀 Como rodar o projeto localmente
 
-A escolha tecnológica focou em **segurança**, **rapidez de desenvolvimento** e **preparo para nuvem (deploy)**:
+Siga os passos abaixo para clonar e executar a aplicação na sua máquina.
 
-* **Linguagem:** [Python 3.x](https://www.python.org/)
-* **Framework:** [Django](https://www.djangoproject.com/) - Arquitetura robusta e segura.
-* **Servidor de Aplicação:** Gunicorn - Para execução em ambiente de produção.
-* **Frontend:** HTML5, CSS3 e Django Templates.
-* **Banco de Dados:** SQLite (Desenvolvimento).
-* **Infraestrutura:** Configurado para deploy em plataformas PaaS (como Heroku), incluindo arquivos `Procfile` e `requirements.txt`.
+### 1. Pré-requisitos
+Certifique-se de ter o [Python](https://www.python.org/downloads/) instalado em sua máquina.
 
----
+### 2. Clonar o repositório
+Abra o terminal e execute:
 
-## ✨ Funcionalidades (O que foi feito)
+```bash
+git clone [https://github.com/carvalholevis/CRM-Gestao-de-Clientes.git](https://github.com/carvalholevis/CRM-Gestao-de-Clientes.git)
+cd CRM-Gestao-de-Clientes
+```
 
-O sistema implementa o ciclo completo de gestão de dados (CRUD):
+### 3. Criar e ativar o Ambiente Virtual (Virtualenv)
+É recomendável criar um ambiente isolado para as dependências do projeto.
 
-1.  **Cadastro de Clientes:** Formulário para inserção de Nome, Telefone, Email e Endereço.
-2.  **Listagem Inteligente:** Visualização rápida de todos os clientes cadastrados.
-3.  **Edição de Dados:** Atualização de contatos e endereços.
-4.  **Remoção de Registros:** Limpeza de dados de clientes inativos.
-5.  **Área Administrativa:** Painel seguro (Django Admin) para gestão total do sistema.
+**No Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
 
----
+**No macOS / Linux:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-## 📂 Metodologia de Desenvolvimento
+### 4. Instalar as Dependências
+Com o ambiente virtual ativado, instale o Django e as bibliotecas necessárias.
 
-O projeto seguiu etapas de engenharia de software:
+*Caso o arquivo `requirements.txt` não esteja disponível, instale manualmente:*
+```bash
+pip install django django-crispy-forms crispy-bootstrap5
+```
 
-1.  **Levantamento de Requisitos:** Reuniões com o cliente para entender o fluxo de trabalho.
-2.  **Reestruturação e Organização:** O projeto foi estruturado seguindo as melhores práticas do Django, mantendo a raiz do repositório limpa e configurada para integração contínua.
-3.  **Implementação MVT:** Desenvolvimento focado na separação de responsabilidades (Modelos, Visualizações e Templates).
+*Se o arquivo `requirements.txt` já existir no projeto, use apenas:*
+```bash
+pip install -r requirements.txt
+```
 
----
+### 5. Configurar o Banco de Dados
+Crie as tabelas necessárias no banco de dados SQLite local:
 
-## 🚀 Como Executar o Projeto
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
 
-Instruções para rodar a aplicação em ambiente local:
+### 6. Criar um Superusuário (Admin)
+Para acessar o painel administrativo do Django, crie um usuário com acesso total:
 
-1.  **Clonar o repositório:**
-    ```bash
-    git clone [https://github.com/carvalholevis/CRM-Gestao-de-Clientes.git](https://github.com/carvalholevis/CRM-Gestao-de-Clientes.git)
-    ```
+```bash
+python manage.py createsuperuser
+```
+*Siga as instruções no terminal para definir nome de usuário, e-mail e senha.*
 
-2.  **Entrar na pasta do projeto:**
-    ```bash
-    cd CRM-Gestao-de-Clientes
-    ```
+### 7. Iniciar o Servidor
+Por fim, inicie o servidor de desenvolvimento:
 
-3.  **Criar ambiente virtual e instalar dependências:**
-    ```bash
-    python -m venv venv
-    # Ativar venv (Windows: venv\Scripts\activate | Linux/Mac: source venv/bin/activate)
-    pip install -r requirements.txt
-    ```
+```bash
+python manage.py runserver
+```
 
-4.  **Executar Migrações e Servidor:**
-    ```bash
-    python manage.py migrate
-    python manage.py runserver
-    ```
-
-5.  **Acesse:** Abra o navegador em `http://127.0.0.1:8000/`
+### 8. Acessar a Aplicação
+O projeto estará acessível em:
+* **Aplicação Principal:** [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+* **Painel Admin:** [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
 
 ---
 
 ## 👨‍💻 Autor
 
 **Léviton Lima Carvalho**
-* Estudante de Engenharia de Software
-* Desenvolvedor Full Stack
-* [GitHub](https://github.com/carvalholevis)
+* Estudante de Engenharia de Software - Descomplica Faculdade Digital
+* [Perfil no GitHub](https://github.com/carvalholevis)
 
 ---
-*Projeto de Extensão Universitária - Apoio à Gestão de Microempresa Internacional.*
+
+### 📝 Dica para manutenção
+Para gerar ou atualizar o arquivo de dependências deste projeto após instalar novas bibliotecas, execute:
+```bash
+pip freeze > requirements.txt
